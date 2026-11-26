@@ -33,15 +33,15 @@
             </section>
 
             <section class="form-section">
-                <h2>🎟️ Formule d'abonnement</h2>
+                <h2>🎫 Formule d'abonnement</h2>
                 <fieldset>
                     <legend>Choisissez votre formule :</legend>
-                    <label class="choice"><input type="radio" name="formule" value="basique" checked><span>🏅 Basique - 4 séances/mois (2000 DA/mois)</span></label>
+                    <label class="choice"><input type="radio" name="formule" value="basique" checked><span>🥉 Basique - 4 séances/mois (2000 DA/mois)</span></label>
                     <label class="choice"><input type="radio" name="formule" value="premium"><span>🥈 Premium - 10 séances/mois (4500 DA/mois)</span></label>
                     <label class="choice"><input type="radio" name="formule" value="illimite"><span>🥇 Illimité - Séances illimitées (7000 DA/mois)</span></label>
                 </fieldset>
                 <div class="grid two-columns">
-                    <div class="field"><label for="debut">Date de début souhaitée :</label><input id="debut" name="debut" type="date"></div>
+                    <div class="field"><label for="debut">Date de début souhaitée :</label><input id="debut" name="debut" type="month"></div>
                     <div class="field"><label for="duree">Durée d'engagement :</label><select id="duree" name="duree"><option value="">-- Sélectionner --</option><option value="3">3 mois</option><option value="6">6 mois (-5 %)</option><option value="12">12 mois (-10 %)</option></select></div>
                     <div class="field full"><label for="accompagnants">Nombre d'accompagnants habituels :</label><input id="accompagnants" name="accompagnants" type="number" min="0" max="10" value="0"></div>
                 </div>
@@ -56,22 +56,30 @@
                     <label class="choice"><input type="checkbox" name="genres[]" value="drame"><span>🎭 Drame</span></label>
                     <label class="choice"><input type="checkbox" name="genres[]" value="horreur"><span>👻 Horreur / Thriller</span></label>
                     <label class="choice"><input type="checkbox" name="genres[]" value="science-fiction"><span>🚀 Science-fiction</span></label>
-                    <label class="choice"><input type="checkbox" name="genres[]" value="romance"><span>💞 Romance</span></label>
+                    <label class="choice"><input type="checkbox" name="genres[]" value="romance"><span>💕 Romance</span></label>
                     <label class="choice"><input type="checkbox" name="genres[]" value="documentaire"><span>📹 Documentaire</span></label>
                 </fieldset>
-                <div class="field"><label for="langues">Langues de films (maintenir Ctrl/Cmd pour sélection multiple) :</label><select id="langues" name="langues[]" multiple size="5"><option value="arabe">العربية (Arabe)</option><option value="francais">Français</option><option value="anglais">English</option><option value="espagnol">Español</option><option value="autre">Autre</option></select></div>
+                <div class="field"><label for="langues">Langues de films (maintenir Ctrl/Cmd pour sélection multiple) :</label><select id="langues" name="langues[]" multiple size="5"><option value="arabe">العربية (Arabe)</option><option value="francais" selected>Français</option><option value="anglais">English</option><option value="espagnol">Español</option><option value="autre">Autre</option></select></div>
                 <div class="field"><label for="realisateur">Réalisateur préféré (recherche) :</label><input id="realisateur" name="realisateur" type="search" list="realisateurs" placeholder="Ex: Hitchcock, Kubrick, Tarantino..."><datalist id="realisateurs"><option value="Alfred Hitchcock"><option value="Stanley Kubrick"><option value="Quentin Tarantino"><option value="Christopher Nolan"></datalist></div>
                 <div class="field"><label for="blog">Site ou blog cinéma que vous suivez :</label><input id="blog" name="blog" type="url" placeholder="https://exemple.com"></div>
             </section>
 
             <section class="form-section">
-                <h2>🗓️ Disponibilités et préférences</h2>
+                <h2>📅 Disponibilités et préférences</h2>
                 <div class="grid two-columns">
                     <div class="field"><label for="semaine">Semaine préférée :</label><input id="semaine" name="semaine" type="week"></div>
                     <div class="field"><label for="horaire">Horaire préféré :</label><input id="horaire" name="horaire" type="time"></div>
                     <div class="field full"><label for="premiere">Première séance souhaitée :</label><input id="premiere" name="premiere" type="datetime-local"></div>
-                    <div class="field full"><label for="frequence">À quelle fréquence allez-vous au cinéma actuellement ?</label><div class="range-line"><input id="frequence" name="frequence" type="range" min="0" max="20" value="4"><output for="frequence">4</output><span>fois/mois</span></div></div>
-                    <div class="field"><label for="couleur">Couleur de votre carte de membre :</label><input id="couleur" name="couleur" type="color" value="#ed414b"></div>
+                    <div class="field full">
+                        <label for="frequence">À quelle fréquence allez-vous au cinéma actuellement ?</label>
+                        <div class="range-line">
+                            <input id="frequence" name="frequence" type="range" min="0" max="20" value="4"
+                                oninput="this.nextElementSibling.value = this.value">
+                            <output for="frequence">4</output>
+                            <span>fois/mois</span>
+                        </div>
+                    </div>
+                    <div class="field"><label for="couleur">Couleur de votre carte de membre :</label><input id="couleur" name="couleur" type="color" value="#ef4444"></div>
                 </div>
             </section>
 
